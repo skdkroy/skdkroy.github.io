@@ -3,22 +3,42 @@
   <head>
 <meta name="monetag" content="cc207607a3a97ce2abcc0389f26f96f9">
 
-   <!DOCTYPE html>
+   
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Download Page</title>
   <style>
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    header h1, footer p {
+      margin: 0;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
+      padding: 20px;
     }
 
     .container {
@@ -28,7 +48,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       padding: 20px;
       max-width: 400px;
-      width: 90%;
+      width: 100%;
     }
 
     .image-container {
@@ -69,14 +89,24 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Download Your File</h1>
-    <div class="image-container">
-      <img src="your-image.jpg" alt="Dawn Movie" class="movie-image">
+  <header>
+    <h1>Welcome to Dawn Movie Download</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Download Your File</h1>
+      <div class="image-container">
+        <img src="your-image.jpg" alt="Dawn Movie" class="movie-image">
+      </div>
+      <p id="timer" class="timer">Please wait 30 seconds to enable the download button.</p>
+      <button id="download-btn" class="download-btn" disabled>Download Now</button>
     </div>
-    <p id="timer" class="timer">Please wait 30 seconds to enable the download button.</p>
-    <button id="download-btn" class="download-btn" disabled>Download Now</button>
-  </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Dawn Movies. All rights reserved.</p>
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
