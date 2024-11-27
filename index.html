@@ -3,9 +3,105 @@
   <head>
 <meta name="monetag" content="cc207607a3a97ce2abcc0389f26f96f9">
 
-    <title>Welcome to dip.net.in</title>
-  </head>
-  <body>
-    <h1>Welcome to dip.net.in</h1>
-  </body>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .image-container {
+      margin: 20px 0;
+    }
+
+    .movie-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .timer {
+      font-size: 18px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .download-btn {
+      background-color: #888;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: not-allowed;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn.active {
+      background-color: #28a745;
+      cursor: pointer;
+    }
+
+    .download-btn.active:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Download Your File</h1>
+    <div class="image-container">
+      <img src="your-image.jpg" alt="Dawn Movie" class="movie-image">
+    </div>
+    <p id="timer" class="timer">Please wait 30 seconds to enable the download button.</p>
+    <button id="download-btn" class="download-btn" disabled>Download Now</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const timerElement = document.getElementById("timer");
+      const downloadButton = document.getElementById("download-btn");
+      const redirectUrl = "https://example.com/download"; // Replace with your actual download URL
+
+      let timeLeft = 30;
+
+      const countdown = setInterval(() => {
+        if (timeLeft > 0) {
+          timerElement.textContent = `Please wait ${timeLeft} seconds to enable the download button.`;
+          timeLeft--;
+        } else {
+          clearInterval(countdown);
+          timerElement.textContent = "You can now download the file.";
+          downloadButton.disabled = false;
+          downloadButton.classList.add("active");
+        }
+      }, 1000);
+
+      downloadButton.addEventListener("click", () => {
+        window.location.href = redirectUrl;
+      });
+    });
+  </script>
+</body>
 </html>
