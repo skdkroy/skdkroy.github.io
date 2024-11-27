@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<html>
-  <head>
-<meta name="monetag" content="cc207607a3a97ce2abcc0389f26f96f9">
-
-   
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -120,6 +114,25 @@
       <p id="timer" class="timer">Please wait 30 seconds to enable the download button.</p>
       <button id="download-btn" class="download-btn" disabled>Download Now</button>
     </div>
+ 
+    <div class="container">
+        <h2>Choose a Movie</h2>
+        <div class="image-grid">
+          <a href="page1.html">
+            <img src="movie1.jpg" alt="Movie 1" title="Movie 1">
+          </a>
+          <a href="page2.html">
+            <img src="movie2.jpg" alt="Movie 2" title="Movie 2">
+          </a>
+          <a href="page3.html">
+            <img src="movie3.jpg" alt="Movie 3" title="Movie 3">
+          </a>
+        </div>
+  
+        <h2>Download Your File</h2>
+        <p id="timer" class="timer">Please wait 30 seconds to enable the download button.</p>
+        <button id="download-btn" class="download-btn" disabled>Download Now</button>
+      </div>
   </main>
 
   <footer>
@@ -136,7 +149,7 @@
 
       const countdown = setInterval(() => {
         if (timeLeft > 0) {
-          timerElement.textContent = `Please wait ${timeLeft} seconds to enable the download button.`;
+          timerElement.textContent = Please wait ${timeLeft} seconds to enable the download button.;
           timeLeft--;
         } else {
           clearInterval(countdown);
